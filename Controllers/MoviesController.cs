@@ -13,8 +13,9 @@ namespace Vidly.Controllers
         public ActionResult Random()
         {
             var movie = new Movie(){ Name = "Shrek2!" };
-
-            return View(movie);
+            
+            return View(movie);B
+            // return Json(new { name = "Shrek3!", Id=9999 }, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Vidly.Controllers
         {
             var movie = new Movie(){ Name = "Shrek2!" };
             
-            return View(movie);B
+            return View(movie);
             // return Json(new { name = "Shrek3!", Id=9999 }, JsonRequestBehavior.AllowGet);
         }
     }

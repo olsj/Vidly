@@ -175,6 +175,39 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908131343057_InitialModel.cs" />
+    <Compile Include="Migrations\201908131343057_InitialModel.Designer.cs">
+      <DependentUpon>201908131343057_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131354491_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201908131354491_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201908131354491_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131358512_AddMembershipType.cs" />
+    <Compile Include="Migrations\201908131358512_AddMembershipType.Designer.cs">
+      <DependentUpon>201908131358512_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131400441_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201908131400441_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201908131400441_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131408272_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201908131408272_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201908131408272_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131837172_AfterMoveHome.cs" />
+    <Compile Include="Migrations\201908131837172_AfterMoveHome.Designer.cs">
+      <DependentUpon>201908131837172_AfterMoveHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131846528_ReInitIdentityModules.cs" />
+    <Compile Include="Migrations\201908131846528_ReInitIdentityModules.Designer.cs">
+      <DependentUpon>201908131846528_ReInitIdentityModules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131851140_RePopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201908131851140_RePopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201908131851140_RePopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -247,7 +280,30 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201908131343057_InitialModel.resx">
+      <DependentUpon>201908131343057_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131354491_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201908131354491_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131358512_AddMembershipType.resx">
+      <DependentUpon>201908131358512_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131400441_PopulateMembershipTypes.resx">
+      <DependentUpon>201908131400441_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131408272_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201908131408272_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131837172_AfterMoveHome.resx">
+      <DependentUpon>201908131837172_AfterMoveHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131846528_ReInitIdentityModules.resx">
+      <DependentUpon>201908131846528_ReInitIdentityModules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131851140_RePopulateMembershipTypes.resx">
+      <DependentUpon>201908131851140_RePopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -261,6 +317,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

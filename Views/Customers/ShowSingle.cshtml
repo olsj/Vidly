@@ -1,0 +1,27 @@
+﻿@model Vidly.Models.Customer
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Customers</h1>
+
+<table class="table table‐bordered table-­hover”>">
+    <thead>
+        <th><h4>Customers</h4></th>
+    </thead>
+        @if (Model.Id == 0)
+        { 
+<tr>
+    <td>No customers found.</td>
+</tr>
+        }
+        else
+        {
+           
+            <tr>
+                <td>@Model.Name</td>
+            </tr>
+        }
+</table>
+

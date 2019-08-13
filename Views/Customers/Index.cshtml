@@ -8,23 +8,30 @@
 
 <table class="table table‐bordered table-­hover”>">
     <thead>
-        <th><h4>Customers</h4></th>
+        <tr>
+            <th><h4>Customer</h4></th>
+            <th><h4>Discount rate</h4></th>
+         </tr>
     </thead>
-        @if (Model.Customers.ToString().Length == 0)
-        {
-<tr>
-    <td>No customers found.</td>
-</tr>
-        }
-        else
-        {
-            
+        <tbody>
+            @if (Model.Customers.ToString().Length == 0)
+            {
+            <tr>
+                <td>No customers found.</td>
+            </tr>
+            }
+            else
+            {
+
             foreach (var customer in Model.Customers)
             {
-                <tr>
-                    <td>@Html.ActionLink(customer.Name, "Index", "Customers", new {id = customer.Id},null)</td>
-                </tr>
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "Index", "Customers", new {id = customer.Id},null)</td>
+                <td>@customer.MembershipType.DiscountRate %</td>
+            </tr>
             }
-        }
+            }
+            
+        </tbody>
 </table>
 

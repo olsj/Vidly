@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
-using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -46,16 +43,17 @@ namespace Vidly.Controllers
         public ActionResult ShowSingle(int postId)
         {
             var customers = _context.Customers.SingleOrDefault(x => x.Id == postId);
-            /*                new List<Customer>
-                        {
-                            new Customer { Id = 1, Name = "John Smith" },
-                            new Customer { Id = 2, Name = "Mary Williams" },
-                        };
-            */
+
             if (customers == null)
                 return HttpNotFound();
 
-            return View(customers);
+            var viewModel = new NewCustomerViewModel()
+            {
+                Customer = customers,
+                MembershipType = _context.MembershipTypes.SingleOrDefault(m => m.Id == customers.MemberShipTypeId)
+            };
+
+            return View(viewModel);
 
         }
 

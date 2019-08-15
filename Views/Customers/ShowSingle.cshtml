@@ -1,27 +1,35 @@
-﻿@model Vidly.Models.Customer
+﻿@model Vidly.ViewModels.NewCustomerViewModel
+@using Microsoft.Ajax.Utilities
+@using Vidly.Models
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Customers</h1>
-
-<table class="table table‐bordered table-­hover”>">
-    <thead>
-        <th><h4>Customers</h4></th>
-    </thead>
-        @if (Model.Id == 0)
+        @if (Model.Customer.Id == null)
         { 
-<tr>
-    <td>No customers found.</td>
-</tr>
+            <table class="table table‐bordered table-­hover”>">
+            <thead>
+                <tr>
+                    <th><h4>Customers</h4></th>
+                </tr>
+            </thead>
+            
+            <tr>
+                <td>No customers found.</td>
+            </tr>
+            </table>
         }
         else
         {
+            <h1>@Model.Customer.Name</h1>
            
-            <tr>
-                <td>@Model.Name</td>
-            </tr>
+            <ul>
+                <li>Membership Type: @Model.MembershipType.Name</li>
+                @if (!Model.Customer.DateOfBirth.Equals(null))
+                {
+                    <li>Date of Birth @Model.Customer.DateOfBirth</li>
+                }
+            </ul>
         }
-</table>
 
